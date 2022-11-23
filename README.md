@@ -17,8 +17,7 @@ D=$(date +%d)
 
 Ymd=$Y-$M-$D
 
-cd ~/{깃 폴더의 절대 경로} # 이걸 안하면 sh가 .git과 같은 위치에 있더라도 fatal: not a git repository (or any of the parent directories): .git 오류가 뜬다.
-eval `ssh-agent -s` && ssh-add ~/.ssh/id_rsa && ssh-add -l # 리모트 연결하고 처음 한 번만 실행 해주면 된다.
+cd ~/{깃 폴더의 절대 경로}
 git add .
 git commit -m "TIL: ${Ymd} 🌱"
 git push origin main
