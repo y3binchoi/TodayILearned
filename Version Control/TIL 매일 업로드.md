@@ -49,6 +49,7 @@ crontab -e
 - 매일 오후 11시 48분마다 위의 sh 파일이 실행되고 그 표준 로그를 수집한다.
 - 꼭 한 줄에 적어야 한다.
 ###### 참고
+- [크론탭을 이용한 Git PUSH 자동화](https://ssafy-story.tistory.com/37)
 - [Unable to run git commands with crontab](https://stackoverflow.com/questions/55966634/unable-to-run-git-commands-with-crontab)
 - [Mac OS 에서 crontab 사용 - 크롤러 크론탭으로 돌려보기](https://f-dever-error-log.tistory.com/29)
 - [크론탭 스케줄링사용하여 github auto commit push 자동 잔디밭 만들기](https://shlee0882.tistory.com/270)

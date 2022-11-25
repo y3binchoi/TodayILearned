@@ -75,3 +75,5 @@ public class AwsS3Config {
 
 
 ###### 참고
+- [AWS - 스프링부트 & S3에 이미지 업로드하기](https://velog.io/@rainbowweb/AWS-%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8-S3)
+- 

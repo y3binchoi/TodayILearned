@@ -1,5 +1,5 @@
 # TIL
-: Today I Learned
+[: Today I Learned](https://github.com/yebin-choi/TodayILearned)
 >옵시디언(마크다운 에디터)을 이용해 작성하고 있습니다.
 ### 📍 규칙
 1. 매일 컴퓨터를 열고 오늘의 TIL을 템플릿으로 생성한다.
