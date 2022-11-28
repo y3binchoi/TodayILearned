@@ -2,7 +2,8 @@
 >하나의 프로젝트마다 소개 이미지를 넣어줘야 했다. 이미지를 form-data로 받아서 AWS S3에 업로드하는 코드를 작업 순서대로 정리해봤다.
 
 ###### TL;DR
-1. 내용이 길다면 세 줄 요약
+1. AWS S3 버킷 생성
+2. spring project에 연결 설정
 ###### 작업 환경
 ```
 IntelliJ
@@ -10,6 +11,7 @@ Spring Boot 2.7.2
 Java 17
 gradle
 ```
+
 ## 설정
 ### build.gradle
 ```java
