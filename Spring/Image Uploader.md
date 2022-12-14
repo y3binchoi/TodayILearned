@@ -1,15 +1,17 @@
 # [Spring] Image Uploader
->하나의 프로젝트마다 소개 이미지를 넣어줘야 했다. 이미지를 form-data로 받아서 AWS S3에 업로드하는 코드를 작업 순서대로 정리해봤다.
+>하나의 프로젝트마다 소개 이미지를 넣어줘야 했다. 이미지를 form-data로 받아서 AWS S3에 업로드하는 코드를 작업 순서대로 정리했다.
 
 ###### TL;DR
 1. AWS S3 버킷 생성
 2. spring project에 연결 설정
+3. 코드 작성
 ###### 작업 환경
-```
+```java
 IntelliJ
 Spring Boot 2.7.2
 Java 17
-gradle
+gradle 
+yaml
 ```
 
 ## 설정
@@ -27,9 +29,9 @@ cloud:
       access-key: # IAM key
       secret-key: # IAM key
     s3: 
-      bucket: # 버킷 이름 (아시아-서울: ap-northeast-2)
+      bucket: # 버킷 이름
     region: 
-      static: # S3 지역
+      static: # S3 지역 (아시아-서울: ap-northeast-2)
     stack:
       auto: false
 ```
@@ -74,8 +76,36 @@ public class AwsS3Config {
 ```
 - 보안이 필요한 정보들을 코드에 직접 적지 않고 yml 파일에 저장한 후 @Value로 가져온다.
 ### Entity
+```java
+@Getter  
+@Builder  
+@Entity  
+@AllArgsConstructor  
+@NoArgsConstructor  
+@Table(name = "forest")  
+public class Forest {  
+	// ...
+	
+    @Column(name = "image")  
+    private String image;  
+  
+    @Column(name = "thumbnail")  
+    private String thumbnail;  
+  
+    /* ------------------------- Method ------------------------ */  
+    // ...
+    
+    public void saveImageUrl(String imageUrl) {  
+        this.image = imageUrl;  
+    }  
+  
+    public void saveThumbnailUrl(String thumbnail) {  
+        this.thumbnail = thumbnail;  
+    }  
+}
+```
 
 
-###### 참고
+> 참고
+- [SpringBoot & AWS S3 연동하기](https://jojoldu.tistory.com/300)
 - [AWS - 스프링부트 & S3에 이미지 업로드하기](https://velog.io/@rainbowweb/AWS-%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8-S3)
-- 
